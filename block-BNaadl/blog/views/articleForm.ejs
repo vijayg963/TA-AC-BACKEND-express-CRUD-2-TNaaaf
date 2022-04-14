@@ -9,9 +9,10 @@
   </head>
   <body>
     <header>
+      <button><a href="/article">Home</a></button>
       <h1>Article Fill From to add Article</h1>
     </header>
-    <form action="/new" method="post">
+    <form action="/article" method="post">
       <input type="text" name="title" placeholder="Enter Title" />
       <textarea
         name="description"
@@ -20,7 +21,7 @@
       ></textarea>
       <input type="text" name="tags" placeholder="tags" />
       <input type="text" name="author" placeholder="Author name" />
-      <input type="submit" value="Add Article" />
+      <button type="submit">Add Article</button>
     </form>
   </body>
 </html>
