@@ -3,9 +3,22 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
-var articleRouter = require('./routes/article');
+var articleRouter = require('./routes/articles');
+
+// connect to database
+mongoose.connect(
+  'mongodb://localhost/blog',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  },
+  (err) => {
+    console.log(err ? err : 'connected true');
+  }
+);
 
 var app = express();
 

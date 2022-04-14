@@ -2,17 +2,43 @@ body {
   margin: 0 auto;
   line-height: 1.5;
   font-size: 16px;
-  padding: 50px;
+  padding: 10px 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
+main {
+  border-radius: 10px;
+  padding: 25px 40px;
+  border: 3px solid wheat;
+}
+
+button {
+  display: inline-block;
+  margin: 10px;
+  border: 1px solid;
+  font-weight: 800;
+  padding: 6px 1rem;
+  border-radius: 5px;
+  background-color: #57caf7;
+  color: white;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 a {
-  color: #00b7ff;
+  text-decoration: none;
+  color: black;
+  font-weight: 800;
+  font-size: 1rem;
 }
 
 h1 {
   text-align: center;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   text-decoration: underline green;
 }
 
@@ -20,6 +46,12 @@ form {
   border: 5px solid wheat;
   border-radius: 10px;
   padding: 20px;
+}
+
+span {
+  font-size: 1.1rem;
+  color: brown;
+  font-weight: 700;
 }
 
 input,
@@ -30,14 +62,25 @@ textarea {
   margin: 5px;
 }
 
-input[type='submit'] {
-  text-align: center;
+button[type='submit'] {
   background-color: #57caf7;
   border: none;
   display: inline-block;
   border: 1px solid;
-  margin: 2%;
+  margin: 2% 40%;
   font-weight: 800;
-  padding: 6px;
+  padding: 6px 1.2rem;
   border-radius: 4px;
+}
+
+.edit {
+  background-color: rgb(12, 145, 198);
+}
+
+.delete {
+  background-color: red;
+}
+
+.like {
+  background-color: green;
 }
