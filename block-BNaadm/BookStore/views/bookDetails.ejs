@@ -1,0 +1,23 @@
+<%- include('partials/header') -%>
+<main>
+  <div>
+    <h2>Title- <%= book.title %></h2>
+    <p><%= book.description %></p>
+    <h2>Price: <%= book.price %></h2>
+    <h2>Author: <%= book.author %></h2>
+  </div>
+  <div class="flex">
+    <a href="/books/<%=book.id %>/edit">
+      <button class="edit">Edit</button>
+    </a>
+    <a href="/books/<%= book.id %>/delete">
+      <button class="delete">Delete</button>
+    </a>
+  </div>
+  <form action="/books/<%= book.id %>/comments" method="post">
+    <textarea name="content" rows="4" placeholder="Commnent"></textarea>
+    <button type="submit">Add Comment</button>
+  </form>
+</main>
+
+<%- include('partials/footer') -%>
