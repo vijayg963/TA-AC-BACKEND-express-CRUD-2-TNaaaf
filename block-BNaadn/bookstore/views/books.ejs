@@ -1,0 +1,18 @@
+<%- include('partials/header') -%>
+
+<main>
+  <h1>All books</h1>
+  <div>
+    <% if (books.length) { %> <% books.forEach(b => { %>
+    <a href="/books/<%= b.id %>" class="flex">
+      <h2><%= b.title %></h2>
+
+      <button class="show">Show</button>
+    </a>
+    <% }) %> <% } else { %>
+    <h2>No book Present...</h2>
+    <% } %>
+  </div>
+</main>
+
+<%- include('partials/footer') -%>
