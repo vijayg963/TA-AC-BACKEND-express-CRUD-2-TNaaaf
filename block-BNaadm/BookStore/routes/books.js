@@ -28,11 +28,21 @@ router.post('/', (req, res, next) => {
 });
 
 // Fetch Single book data
+// router.get('/:id', (req, res, next) => {
+//   var id = req.params.id;
+//   Book.findById(id, (err, book) => {
+//     if (err) return next(err);
+//     res.render('bookDetails', { book });
+//   });
+// });
+
 router.get('/:id', (req, res, next) => {
   var id = req.params.id;
   Book.findById(id, (err, book) => {
     if (err) return next(err);
-    res.render('bookDetails', { book });
+    Comment.find({ bookId: id }, (err, comments) => {
+      res.render('bookDetails', { book, comments });
+    });
   });
 });
 
@@ -63,12 +73,14 @@ router.get('/:id/delete', (req, res, next) => {
   });
 });
 
-router.post('/:id/comments', (req, res) => {
-  var id = req.params.id;
-  req.body.bookId = id;
+// add comment
+router.post('/:bookId/comments', (req, res) => {
+  var bookId = req.params.bookId;
+  req.body.bookId = bookId;
+  console.log(req.body);
   Comment.create(req.body, (err, comment) => {
     if (err) return next(err);
-    res.redirect('/books/' + id);
+    res.redirect('/books/' + bookId);
   });
 });
 
